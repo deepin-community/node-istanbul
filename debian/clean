@@ -1,0 +1,7 @@
+babel-plugin-istanbul/lib/
+html-escaper/index.js
+html-escaper/min.js
+html-report/
+istanbul-reports/lib/html-spa/assets/bundle.js
+lcov-report/
+lib/assets/vendor/

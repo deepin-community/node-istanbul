@@ -1,0 +1,10 @@
+.github
+*.tgz
+package
+coverage
+.nyc_output
+.taprc
+.travis.yml
+nyc-settings.js
+tap-snapshots
+test

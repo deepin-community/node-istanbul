@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod +x debian/node-istanbul/usr/share/nodejs/istanbul/lib/cli.js
+
+override_dh_installchangelogs:
+# fix mix of html and text
+	dh_installchangelogs CHANGELOG.md
+	sed -i -e 's,</\?t[dr]>,,g' -e 's,</\?ul>,,g'  -e 's,</\?li>,,g' -e 's,</\?table>,,g' -e 's/td>//g' -e 's/[ \t]*$$//' debian/node-istanbul/usr/share/doc/node-istanbul/changelog

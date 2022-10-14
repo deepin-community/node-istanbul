@@ -1,0 +1,93 @@
+Source: node-istanbul
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Bastien Roucariès <rouca@debian.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 13)
+ , dh-buildinfo
+ , dh-sequence-nodejs
+ , handlebars <!nocheck>
+ , libjs-prettify
+ , node-abbrev <!nocheck>
+ , node-async <!nocheck>
+ , node-babel-loader
+ , node-babel7
+ , node-escodegen <!nocheck>
+ , node-esprima <!nocheck>
+ , node-glob <!nocheck>
+ , node-js-yaml <!nocheck>
+ , node-mkdirp <!nocheck>
+ , node-nopt <!nocheck>
+ , node-once <!nocheck>
+ , node-react
+ , node-react-dom
+ , node-resolve <!nocheck>
+ , node-supports-color <!nocheck>
+ , node-which <!nocheck>
+ , node-wordwrap <!nocheck>
+ , nodejs:native (>= 12)
+ , nodeunit <!nocheck>
+ , rollup
+ , uglifyjs.terser
+ , webpack
+ , node-archy <!nocheck>
+ , node-make-dir <!nocheck>
+ , node-p-map <!nocheck>
+ , node-rimraf <!nocheck>
+ , node-uuid <!nocheck>
+ , node-path-key <!nocheck>
+ , node-shebang-command <!nocheck>
+ , node-type-fest <!nocheck>
+ , node-is-stream <!nocheck>
+ , node-strip-bom
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-istanbul
+Vcs-Git: https://salsa.debian.org/js-team/node-istanbul.git
+Homepage: https://github.com/gotwarlost/istanbul#readme
+Rules-Requires-Root: no
+
+Package: node-istanbul
+Architecture: all
+Depends:
+ ${misc:Depends}
+ , handlebars
+ , libjs-prettify
+ , node-abbrev
+ , node-async
+ , node-escodegen
+ , node-esprima
+ , node-glob
+ , node-js-yaml
+ , node-mkdirp
+ , node-nopt
+ , node-once
+ , node-resolve
+ , node-supports-color
+ , node-which
+ , node-wordwrap
+ , nodejs:any (>= 12)
+ , node-archy
+ , node-make-dir
+ , node-p-map
+ , node-rimraf
+ , node-uuid
+ , node-path-key
+ , node-shebang-command
+ , node-strip-bom
+ , node-type-fest
+ , node-is-stream
+Recommends:
+ node-babel7
+ , node-resolve-from
+Provides:
+ ${nodejs:Provides}
+ , istanbul (= ${source:Version})
+Description: JavaScript code coverage tool
+ This package is a JavaScript code coverage tool that computes
+ statement, line, function and branch coverage with
+ module loader hooks to transparently add coverage
+ when running tests.
+ .
+ Node.js is an event-based server-side JavaScript engine.

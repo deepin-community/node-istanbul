@@ -1,0 +1,2 @@
+# False positive
+missing-dep-for-interpreter node => nodejs (usr/share/nodejs/istanbul/lib/cli.js) node

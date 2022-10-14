@@ -1,0 +1,39 @@
+From: =?utf-8?q?Bastien_Roucari=C3=A8s?= <rouca@debian.org>
+Date: Thu, 30 Sep 2021 08:15:03 +0000
+Subject: Remove cross-spawn depends
+
+Cross-spawn is insecure for debian use, but needed upstream for windows use.
+
+debian-bug: https://bugs.debian.org/958403
+debian-bug: https://bugs.debian.org/975942
+forwarded: not-needed
+---
+ istanbul-lib-processinfo/index.js     | 2 +-
+ istanbul-lib-processinfo/package.json | 1 -
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/istanbul-lib-processinfo/index.js b/istanbul-lib-processinfo/index.js
+index fd90650..1baa3d4 100644
+--- a/istanbul-lib-processinfo/index.js
++++ b/istanbul-lib-processinfo/index.js
+@@ -6,7 +6,7 @@ const {dirname, resolve} = require('path')
+ const {promisify} = require('util')
+ /* Shallow clone so we can promisify in-place */
+ const fs = { ...require('fs') }
+-const {spawn} = require('cross-spawn')
++const {spawn} = require('child_process')
+ const rimraf = promisify(require('rimraf'))
+ const pMap = require('p-map')
+ 
+diff --git a/istanbul-lib-processinfo/package.json b/istanbul-lib-processinfo/package.json
+index 4bb7e00..585c116 100644
+--- a/istanbul-lib-processinfo/package.json
++++ b/istanbul-lib-processinfo/package.json
+@@ -15,7 +15,6 @@
+   "license": "ISC",
+   "dependencies": {
+     "archy": "^1.0.0",
+-    "cross-spawn": "^7.0.0",
+     "istanbul-lib-coverage": "^3.0.0-alpha.1",
+     "make-dir": "^3.0.0",
+     "p-map": "^3.0.0",

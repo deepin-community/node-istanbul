@@ -1,0 +1,5 @@
+0001-disable-some-tests.diff
+0002-fix-webpack-paths.patch
+0003-Remove-cross-spawn-depends.patch
+0004-Remove-fromentries-dependency.patch
+uuid8.patch

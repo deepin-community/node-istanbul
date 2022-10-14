@@ -1,0 +1,200 @@
+node-istanbul (0.4.5+repack09+~cs74.23.58-1) unstable; urgency=medium
+
+  * Add node-hasha
+
+ -- Bastien Roucariès <rouca@debian.org>  Mon, 15 Nov 2021 17:30:26 +0000
+
+node-istanbul (0.4.5+repack06+~cs69.17.54-2) unstable; urgency=medium
+
+  * Team upload
+  * Add patch for recent uuid (fixes istanbul-lib-processinfo)
+
+ -- Yadd <yadd@debian.org>  Wed, 06 Oct 2021 06:41:45 +0200
+
+node-istanbul (0.4.5+repack06+~cs69.17.54-1) unstable; urgency=medium
+
+  * Add process-on-spawn, node-preload.
+  * Patch process-on-spawn in order to avoid fromentries (but need nodejs >= 12)
+
+ -- Bastien Roucariès <rouca@debian.org>  Sun, 03 Oct 2021 13:49:23 +0000
+
+node-istanbul (0.4.5+repack05+~cs65.15.53-1) unstable; urgency=medium
+
+  * Remove insecure node-cross-spawn (use patches)
+  * Add default-require-extensions, append-transform, istanbul-lib-hook
+
+ -- Bastien Roucariès <rouca@debian.org>  Thu, 30 Sep 2021 08:55:31 +0000
+
+node-istanbul (0.4.5+repack04+~cs67.15.56-1) unstable; urgency=medium
+
+  * Add package node-cross-spawn and node-istanbul-lib-processinfo
+
+ -- Bastien Roucariès <rouca@debian.org>  Wed, 29 Sep 2021 19:58:21 +0000
+
+node-istanbul (0.4.5~+repack02+~cs58.15.51-1) unstable; urgency=medium
+
+  * Team upload
+  * Repack to (re)fix @types/istanbul-lib-import (Closes: #995292)
+
+ -- Yadd <yadd@debian.org>  Wed, 29 Sep 2021 15:38:28 +0200
+
+node-istanbul (0.4.5+repack01+~cs58.15.51-1) unstable; urgency=medium
+
+  * Remove prettify.css
+
+ -- Bastien Roucariès <rouca@debian.org>  Wed, 29 Sep 2021 12:20:44 +0000
+
+node-istanbul (0.4.5+ds+~cs58.15.51+repack1-1) unstable; urgency=medium
+
+  * Team upload
+  * Remove duplicate test
+  * Fully build html-escaper (+rollup)
+  * Exclude files from import and repack (better for #995296)
+  * Clean lintian overrides
+
+ -- Yadd <yadd@debian.org>  Wed, 29 Sep 2021 14:00:41 +0200
+
+node-istanbul (0.4.5+ds+~cs58.15.51+repack-2) unstable; urgency=medium
+
+  * Team upload
+  * Regenerate bundled file for istanbul-reports (Closes: #995296)
+
+ -- Yadd <yadd@debian.org>  Wed, 29 Sep 2021 13:37:04 +0200
+
+node-istanbul (0.4.5+ds+~cs58.15.51+repack-1) unstable; urgency=medium
+
+  * Team upload
+  * Reimport (Closes: #995292)
+
+ -- Yadd <yadd@debian.org>  Wed, 29 Sep 2021 11:04:43 +0200
+
+node-istanbul (0.4.5+ds+~cs58.15.51-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version for bundled:
+    - html-escaper
+    - istanbul-lib-instrument
+    - istanbuljs-schema
+    - types-istanbul-lib-report
+    - types-istanbul-reports
+    - v8-to-istanbul
+
+ -- Bastien Roucariès <rouca@debian.org>  Tue, 28 Sep 2021 18:40:26 +0000
+
+node-istanbul (0.4.5+ds+~cs56.14.45-1) unstable; urgency=medium
+
+  * Team upload
+  * Embed @types/istanbul-reports and repack
+
+ -- Xavier Guimard <yadd@debian.org>  Wed, 09 Dec 2020 10:28:28 +0100
+
+node-istanbul (0.4.5+ds+~cs53.14.45-1) unstable; urgency=medium
+
+  * Team upload
+  * Declare compliance with policy 4.5.1
+  * Embed @types/istanbul-lib-instrument and @types/istanbul-lib-source-maps
+    and repack
+
+ -- Xavier Guimard <yadd@debian.org>  Sun, 06 Dec 2020 08:10:53 +0100
+
+node-istanbul (0.4.5+ds+~cs48.7.40-1) unstable; urgency=medium
+
+  * Team upload
+  * Embed @types/istanbul-lib-report and repack
+
+ -- Xavier Guimard <yadd@debian.org>  Fri, 13 Nov 2020 13:33:02 +0100
+
+node-istanbul (0.4.5+ds+~cs45.7.40-1) unstable; urgency=medium
+
+  * Team upload
+  * Embed @types/istanbul and @types/istanbul-reports
+  * New upstream version 0.4.5+ds+~cs45.7.40 (no other changes)
+  * Fix autopkgtest
+
+ -- Xavier Guimard <yadd@debian.org>  Sun, 08 Nov 2020 15:59:24 +0100
+
+node-istanbul (0.4.5+ds+~cs42.3.10-1) unstable; urgency=medium
+
+  * Team upload
+  * Embed v8-to-istanbul and @types/istanbul-lib-coverage
+  * New upstream version 0.4.5+ds+~cs42.3.10 (no other changes)
+  * Update lintian overrides
+
+ -- Xavier Guimard <yadd@debian.org>  Tue, 27 Oct 2020 09:14:45 +0100
+
+node-istanbul (0.4.5+ds+~cs33.3.7-1) unstable; urgency=medium
+
+  * Team upload
+  * Bump debhelper compatibility level to 13
+  * Declare compliance with policy 4.5.0
+  * Add "Rules-Requires-Root: no"
+  * Use dh-sequence-nodejs
+  * Embed components: babel-plugin-istanbul get-package-type html-escaper
+                      istanbul-lib-coverage istanbul-lib-instrument
+                      istanbul-lib-report istanbul-lib-source-maps
+                      istanbul-reports
+                      @istanbuljs/load-nyc-config @istanbuljs/schema
+    babel-plugin-istanbul test-exclude
+  * New upstream version 0.4.5+ds+~cs33.3.7
+    Really: 0.4.5+~0.1.0+~3.0.0+~3.0.0+~4.0.3
+            +~3.0.0+~4.0.0+~3.0.2+~1.1.0+~0.1.2+~6.0.0+~6.0.0
+  * Add node-babel7 and node-resolve-from to recommended dependencies
+  * Add minimal components test
+  * Update copyright
+  * Drop unneeded version constraints from (build) dependencies
+  * Use dh-sequence-nodejs auto links
+  * New upstream version 0.4.5+ds+~cs33.3.7
+  * Build components
+  * Add lintian overrides
+  * Replace custom test by upstream tests
+
+ -- Xavier Guimard <yadd@debian.org>  Tue, 27 Oct 2020 07:58:32 +0100
+
+node-istanbul (0.4.5+ds-6) unstable; urgency=medium
+
+  * Team upload
+  * Declare compliance with policy 4.4.0
+  * Add debian/gbp.conf
+  * Switch install to pkg-js-tools
+
+ -- Xavier Guimard <yadd@debian.org>  Sat, 03 Aug 2019 15:43:12 +0200
+
+node-istanbul (0.4.5+ds-5) unstable; urgency=medium
+
+  * Team upload
+  * Fix changelog install (Closes: #920342)
+  * Switch tests to pkg-js-tools
+  * Add libjs-prettify in dependencies (Closes: #919841)
+  * generate prettify.js links with dh_links
+
+ -- Xavier Guimard <yadd@debian.org>  Sun, 10 Mar 2019 10:27:57 +0100
+
+node-istanbul (0.4.5+ds-4) unstable; urgency=medium
+
+  * Team upload
+  * Add upstream/metadata
+  * Add libjs-prettify in build dependencies. Fixes debci (Closes: #919905)
+
+ -- Xavier Guimard <yadd@debian.org>  Wed, 23 Jan 2019 17:46:15 +0100
+
+node-istanbul (0.4.5+ds-3) unstable; urgency=medium
+
+  * Bug fix: "broken symlinks:
+    /usr/lib/nodejs/istanbul/lib/assets/vendor/prettify.{css,js} -&gt;
+    ../../../../../../share/javascript/prettify.{css,js}", thanks to
+    Andreas Beckmann (Closes: #919841).
+
+ -- Bastien Roucariès <rouca@debian.org>  Sun, 20 Jan 2019 10:01:48 +0100
+
+node-istanbul (0.4.5+ds-2) unstable; urgency=medium
+
+  * Source upload
+  * Bump policy
+
+ -- Bastien Roucariès <rouca@debian.org>  Fri, 14 Dec 2018 23:15:25 +0100
+
+node-istanbul (0.4.5+ds-1) unstable; urgency=low
+
+  * Initial release (Closes: #900850)
+
+ -- Bastien Roucariès <rouca@debian.org>  Wed, 06 Jun 2018 23:24:14 +0200

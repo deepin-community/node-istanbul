@@ -1,0 +1,25 @@
+From: Yadd <yadd@debian.org>
+Date: Thu, 30 Sep 2021 08:05:02 +0000
+Subject: fix webpack paths
+
+Bug-Debian: https://bugs.debian.org/995296
+Forwarded: not-needed
+Last-Update: 2021-09-29
+---
+ istanbul-reports/lib/html-spa/webpack.config.js | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/istanbul-reports/lib/html-spa/webpack.config.js b/istanbul-reports/lib/html-spa/webpack.config.js
+index 02a2d6c..1af3e75 100644
+--- a/istanbul-reports/lib/html-spa/webpack.config.js
++++ b/istanbul-reports/lib/html-spa/webpack.config.js
+@@ -8,6 +8,9 @@ module.exports = {
+         path: path.resolve(__dirname, 'assets'),
+         filename: 'bundle.js'
+     },
++    resolveLoader: {
++        modules: ['/usr/share/nodejs', 'node_modules'],
++    },
+     module: {
+         rules: [
+             {

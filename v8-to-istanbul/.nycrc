@@ -1,0 +1,12 @@
+{
+  "exclude": [
+    "test/**"
+  ],
+  "reporter": [
+    "html",
+    "text"
+  ],
+  "lines": 99.4,
+  "branches": "91",
+  "statements": "99.4"
+}

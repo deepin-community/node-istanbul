@@ -1,0 +1,2 @@
+rollup --config rollup.config.js
+uglifyjs.terser index.js --comments '/^!/' --compress --mangle -o min.js

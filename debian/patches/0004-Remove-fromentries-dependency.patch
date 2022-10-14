@@ -1,0 +1,37 @@
+From: =?utf-8?q?Bastien_Roucari=C3=A8s?= <rouca@debian.org>
+Date: Sun, 3 Oct 2021 13:52:03 +0000
+Subject: Remove fromentries dependency
+
+Tighen depends on nodejs > 12 thus do not need fromentries
+---
+ process-on-spawn/index.js     | 2 +-
+ process-on-spawn/package.json | 3 ---
+ 2 files changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/process-on-spawn/index.js b/process-on-spawn/index.js
+index b3d0991..3a94fd0 100644
+--- a/process-on-spawn/index.js
++++ b/process-on-spawn/index.js
+@@ -1,7 +1,7 @@
+ 'use strict';
+ 
+ /* Drop this dependency once node.js 12 is required. */
+-const fromEntries = require('fromentries');
++const fromEntries = Object.fromEntries;
+ 
+ const state = getState(1);
+ 
+diff --git a/process-on-spawn/package.json b/process-on-spawn/package.json
+index 9b7ac38..607b6a5 100644
+--- a/process-on-spawn/package.json
++++ b/process-on-spawn/package.json
+@@ -21,9 +21,6 @@
+ 		"url": "https://github.com/cfware/process-on-spawn/issues"
+ 	},
+ 	"homepage": "https://github.com/cfware/process-on-spawn#readme",
+-	"dependencies": {
+-		"fromentries": "^1.2.0"
+-	},
+ 	"devDependencies": {
+ 		"nyc": "^15.0.0-beta.3",
+ 		"standard-version": "^7.0.0",

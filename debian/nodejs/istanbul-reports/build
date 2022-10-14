@@ -1,0 +1,1 @@
+webpack --config lib/html-spa/webpack.config.js --mode production

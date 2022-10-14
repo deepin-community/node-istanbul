@@ -1,0 +1,4 @@
+# Copy "files" field here to avoid head.txt removal
+index.js
+lib
+package.json

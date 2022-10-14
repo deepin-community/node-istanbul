@@ -1,0 +1,5 @@
+/usr/share/javascript/prettify/prettify.css istanbul/lib/assets/vendor/prettify.css
+/usr/share/javascript/prettify/prettify.js  istanbul/lib/assets/vendor/prettify.js
+/usr/share/javascript/prettify/prettify.css istanbul-reports/lib/html/assets/vendor/prettify.css
+/usr/share/javascript/prettify/prettify.js  istanbul-reports/lib/html/assets/vendor/prettify.js
+istanbul/lib/cli.js /usr/bin/istanbul

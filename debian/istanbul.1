@@ -1,0 +1,41 @@
+.TH ISTANBUL "1" "June 2018" "a JS code coverage tool written in JS"
+.SH NAME
+istanbul \- a JS code coverage tool written in JS
+.SH SYNOPSIS
+.B istanbul
+\fI\,help config | <command>\/\fR
+.SH DESCRIPTION
+Available commands are:
+.TP
+check\-coverage
+.IP
+checks overall/per\-file coverage against thresholds from coverage
+JSON files. Exits 1 if thresholds are not met, 0 otherwise
+.TP
+cover
+.IP
+transparently adds coverage information to a node command. Saves
+coverage.json and reports at the end of execution
+.TP
+help
+.IP
+shows help
+.TP
+instrument
+.IP
+instruments a file or a directory tree and writes the
+instrumented code to the desired output location
+.TP
+report
+.IP
+writes reports for coverage JSON objects produced in a previous
+run
+.TP
+test
+.IP
+cover a node command only when npm_config_coverage is set. Use in
+an `npm test` script for conditional coverage
+.PP
+Command names can be abbreviated as long as the abbreviation is unambiguous.
+.SH "SEE ALSO"
+tap(1)

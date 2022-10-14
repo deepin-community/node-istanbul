@@ -1,0 +1,161 @@
+version=4
+opts=repacksuffix=+repack09,\
+dversionmangle=auto,\
+uversionmangle=s%(\d+(?:\.d+)*)-(alpha)%$1~$2%,\
+filenamemangle=s%(?:.*/)?v?(@ANY_VERSION@@ARCHIVE_EXT@)%@PACKAGE@-$1% \
+ https://github.com/gotwarlost/istanbul/tags (?:.*/)?v?(0\.4\.5)@ARCHIVE_EXT@ group
+
+opts=\
+component=get-package-type,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-get-package-type-$1.tar.gz/ \
+ https://github.com/cfware/get-package-type/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=html-escaper,\
+dversionmangle=auto,\
+filenamemangle=s%(?:.*/)?v?(@ANY_VERSION@@ARCHIVE_EXT@)%node-html-escaper-$1% \
+ https://github.com/WebReflection/html-escaper/tags (?:.*/)?v?@ANY_VERSION@@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=istanbul-lib-coverage,pgpmode=none" \
+ https://registry.npmjs.org/istanbul-lib-coverage https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=istanbul-lib-instrument,pgpmode=none" \
+ https://registry.npmjs.org/istanbul-lib-instrument https://registry.npmjs.org/istanbul-lib-instrument/-/istanbul-lib-instrument-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=istanbul-lib-report,pgpmode=none" \
+ https://registry.npmjs.org/istanbul-lib-report https://registry.npmjs.org/istanbul-lib-report/-/istanbul-lib-report-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=istanbul-lib-source-maps,pgpmode=none" \
+ https://registry.npmjs.org/istanbul-lib-source-maps https://registry.npmjs.org/istanbul-lib-source-maps/-/istanbul-lib-source-maps-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=istanbul-reports,pgpmode=none" \
+ https://registry.npmjs.org/istanbul-reports https://registry.npmjs.org/istanbul-reports/-/istanbul-reports-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+opts=\
+component=istanbuljs-load-nyc-config,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-load-nyc-config-$1.tar.gz/ \
+ https://github.com/istanbuljs/load-nyc-config/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=istanbuljs-schema,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-schema-$1.tar.gz/ \
+ https://github.com/istanbuljs/schema/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=babel-plugin-istanbul,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-babel-plugin-istanbul-$1.tar.gz/ \
+ https://github.com/istanbuljs/babel-plugin-istanbul/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=test-exclude,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-test-exclude-$1.tar.gz/ \
+ https://github.com/istanbuljs/test-exclude/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=v8-to-istanbul,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-v8-to-istanbul-$1.tar.gz/ \
+ https://github.com/istanbuljs/v8-to-istanbul/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=types-istanbul-lib-coverage,pgpmode=none" \
+ https://registry.npmjs.org/@types/istanbul-lib-coverage https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts=searchmode=plain,component=types-istanbul-reports,pgpmode=none,\
+ filenamemangle=s%(?:.*?)?\-?(@ANY_VERSION@@ARCHIVE_EXT@)%types-istanbul-reports-$1% \
+ https://registry.npmjs.org/@types/istanbul-reports https://registry.npmjs.org/@types/istanbul-reports/-/istanbul-reports-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=types-istanbul,pgpmode=none" \
+ https://registry.npmjs.org/@types/istanbul https://registry.npmjs.org/@types/istanbul/-/istanbul-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts=searchmode=plain,component=types-istanbul-lib-report,pgpmode=none,\
+ filenamemangle=s%(?:.*?)?\-?(@ANY_VERSION@@ARCHIVE_EXT@)%types-lib-istanbul-reports-$1% \
+ https://registry.npmjs.org/@types/istanbul-lib-report https://registry.npmjs.org/@types/istanbul-lib-report/-/istanbul-lib-report-@ANY_VERSION@@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=types-istanbul-lib-instrument,ctype=nodejs,pgpmode=none" \
+ https://registry.npmjs.org/@types/istanbul-lib-instrument https://registry.npmjs.org/@types/istanbul-lib-instrument/-/istanbul-lib-instrument-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=types-istanbul-lib-source-maps,ctype=nodejs,pgpmode=none" \
+ https://registry.npmjs.org/@types/istanbul-lib-source-maps https://registry.npmjs.org/@types/istanbul-lib-source-maps/-/istanbul-lib-source-maps-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=types-istanbul-reports,ctype=nodejs,pgpmode=none" \
+ https://registry.npmjs.org/@types/istanbul-reports https://registry.npmjs.org/@types/istanbul-reports/-/istanbul-reports-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+# split this one to nyc
+opts=\
+component=istanbul-lib-processinfo,\
+dversionmangle=auto,\
+filenamemangle=s%(?:.*?/)?v?(@ANY_VERSION@@ARCHIVE_EXT@)%node-istanbul-lib-processinfo-$1% \
+ https://github.com/istanbuljs/istanbul-lib-processinfo/tags (?:.*/)?v?@ANY_VERSION@@ARCHIVE_EXT@ checksum
+
+# move this one to ava
+opts=\
+component=default-require-extensions,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s%(?:.*?/)?v?(@ANY_VERSION@@ARCHIVE_EXT@)%node-default-require-extensions-$1% \
+ https://github.com/avajs/default-require-extensions/tags (?:.*?/)?v?@ANY_VERSION@@ARCHIVE_EXT@ checksum
+
+opts=\
+component=append-transform,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s%(?:.*?/)?v?(@ANY_VERSION@@ARCHIVE_EXT@)%node-append-transform-$1% \
+ https://github.com/istanbuljs/append-transform/tags (?:.*?/)?v?@ANY_VERSION@@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts=searchmode=plain,component=istanbul-lib-hook,ctype=nodejs,pgpmode=none,\
+ uversionmangle=s%(\d+(?:\.d+)*)-(alpha)%$1~$2%,\
+ filenamemangle=s%(?:.*?)?-?(@ANY_VERSION@@ARCHIVE_EXT@)%istanbul-lib-hook-$1% \
+ https://registry.npmjs.org/istanbul-lib-hook https://registry.npmjs.org/istanbul-lib-hook/-/istanbul-lib-hook-@ANY_VERSION@@ARCHIVE_EXT@ checksum
+
+# these two should be splitted
+opts=\
+component=process-on-spawn,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s%(?:.*?/)?v?(@ANY_VERSION@@ARCHIVE_EXT@)%node-process-on-spawn-$1% \
+ https://github.com/cfware/process-on-spawn/tags (?:.*?/)?v?@ANY_VERSION@@ARCHIVE_EXT@ checksum
+
+opts=\
+component=node-preload,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s%(?:.*?/)?v?(@ANY_VERSION@@ARCHIVE_EXT@)%node-node-preload-$1% \
+ https://github.com/cfware/node-preload/tags (?:.*?/)?v?@ANY_VERSION@@ARCHIVE_EXT@ checksum
+
+# should be set in nyc
+opts=\
+component=hasha,\
+dversionmangle=auto,\
+filenamemangle=s%(?:.*?/)?v?(@ANY_VERSION@@ARCHIVE_EXT@)%node-hasha-$1% \
+ https://github.com/sindresorhus/hasha/tags (?:.*/)?v?@ANY_VERSION@@ARCHIVE_EXT@ checksum
