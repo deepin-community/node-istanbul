@@ -1,0 +1,5 @@
+.node-version
+.nyc_output
+node_modules
+coverage
+/test/fixtures/unpacked

@@ -6,43 +6,45 @@ Testsuite: autopkgtest-pkg-nodejs
 Priority: optional
 Build-Depends:
  debhelper-compat (= 13)
- , dh-buildinfo
  , dh-sequence-nodejs
  , handlebars <!nocheck>
+ , help2man
  , libjs-prettify
  , node-abbrev <!nocheck>
+ , node-archy <!nocheck>
  , node-async <!nocheck>
  , node-babel-loader
  , node-babel7
+ , node-es6-error (>= 4.1.1-4~) <!nocheck>
  , node-escodegen <!nocheck>
  , node-esprima <!nocheck>
  , node-glob <!nocheck>
+ , node-is-stream <!nocheck>
+ , node-jridgewell-trace-mapping <!nocheck>
  , node-js-yaml <!nocheck>
+ , node-make-dir <!nocheck>
  , node-mkdirp <!nocheck>
  , node-nopt <!nocheck>
  , node-once <!nocheck>
+ , node-p-map <!nocheck>
+ , node-path-key <!nocheck>
  , node-react
  , node-react-dom
  , node-resolve <!nocheck>
+ , node-rimraf <!nocheck>
+ , node-shebang-command <!nocheck>
+ , node-strip-bom
  , node-supports-color <!nocheck>
+ , node-type-fest <!nocheck>
+ , node-uuid <!nocheck>
  , node-which <!nocheck>
  , node-wordwrap <!nocheck>
  , nodejs:native (>= 12)
  , nodeunit <!nocheck>
  , rollup
- , uglifyjs.terser
+ , terser
  , webpack
- , node-archy <!nocheck>
- , node-make-dir <!nocheck>
- , node-p-map <!nocheck>
- , node-rimraf <!nocheck>
- , node-uuid <!nocheck>
- , node-path-key <!nocheck>
- , node-shebang-command <!nocheck>
- , node-type-fest <!nocheck>
- , node-is-stream <!nocheck>
- , node-strip-bom
-Standards-Version: 4.6.0
+Standards-Version: 4.6.2
 Vcs-Browser: https://salsa.debian.org/js-team/node-istanbul
 Vcs-Git: https://salsa.debian.org/js-team/node-istanbul.git
 Homepage: https://github.com/gotwarlost/istanbul#readme
@@ -55,35 +57,48 @@ Depends:
  , handlebars
  , libjs-prettify
  , node-abbrev
+ , node-archy
  , node-async
+ , node-convert-source-map
+ , node-decamelize
+ , node-es6-error (>= 4.1.1-4~)
  , node-escodegen
  , node-esprima
+ , node-find-cache-dir
+ , node-find-up
+ , node-foreground-child
  , node-glob
+ , node-graceful-fs
+ , node-is-stream
+ , node-is-windows
+ , node-jridgewell-trace-mapping
  , node-js-yaml
+ , node-lodash-packages
+ , node-make-dir
  , node-mkdirp
  , node-nopt
  , node-once
+ , node-p-map
+ , node-path-key
  , node-resolve
+ , node-resolve-from
+ , node-rimraf
+ , node-shebang-command
+ , node-signal-exit (>= 4)
+ , node-strip-bom
  , node-supports-color
+ , node-type-fest
+ , node-uuid
  , node-which
  , node-wordwrap
+ , node-write-file-atomic
+ , node-yargs
  , nodejs:any (>= 12)
- , node-archy
- , node-make-dir
- , node-p-map
- , node-rimraf
- , node-uuid
- , node-path-key
- , node-shebang-command
- , node-strip-bom
- , node-type-fest
- , node-is-stream
-Recommends:
- node-babel7
- , node-resolve-from
+Recommends: node-babel7
 Provides:
  ${nodejs:Provides}
  , istanbul (= ${source:Version})
+ , nyc
 Description: JavaScript code coverage tool
  This package is a JavaScript code coverage tool that computes
  statement, line, function and branch coverage with

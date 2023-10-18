@@ -1,11 +1,20 @@
+# Same author
+add-component-copyright istanbul-lib-coverage [debian/copyright]
+add-component-copyright istanbul-lib-hook [debian/copyright]
+add-component-copyright istanbul-lib-instrument [debian/copyright]
+add-component-copyright istanbul-lib-report [debian/copyright]
+add-component-copyright istanbul-lib-source-maps [debian/copyright]
+add-component-copyright istanbul-reports [debian/copyright]
+# Match types-*/*
+add-component-copyright types-istanbul [debian/copyright]
+add-component-copyright types-istanbul-lib-coverage [debian/copyright]
+add-component-copyright types-istanbul-lib-instrument [debian/copyright]
+add-component-copyright types-istanbul-lib-report [debian/copyright]
+add-component-copyright types-istanbul-lib-source-maps [debian/copyright]
+add-component-copyright types-istanbul-reports [debian/copyright]
 # Test data
-source-is-missing v8-to-istanbul/test/fixtures/scripts/branches.covered.js line 8 is 2763 characters long (>512)
-source-is-missing v8-to-istanbul/test/fixtures/scripts/sourcemap-multisource.js line 2 is 1608 characters long (>512)
-source-is-missing v8-to-istanbul/test/fixtures/scripts/relative-source-root.compiled.js
-source-contains-prebuilt-javascript-object v8-to-istanbul/test/fixtures/scripts/branches.covered.js line 8 is 2763 characters long (>512)
-source-contains-prebuilt-javascript-object v8-to-istanbul/test/fixtures/scripts/sourcemap-multisource.js line 2 is 1608 characters long (>512)
-source-contains-prebuilt-javascript-object v8-to-istanbul/test/fixtures/scripts/empty.compiled.js
-source-contains-prebuilt-javascript-object v8-to-istanbul/test/fixtures/scripts/needs-compile.compiled.js
-source-contains-prebuilt-javascript-object v8-to-istanbul/test/fixtures/scripts/relative-source-root.compiled.js
-very-long-line-length-in-source-file v8-to-istanbul/test/fixtures/scripts/branches.covered.js line 9 is 2789 characters long (>512)
-very-long-line-length-in-source-file v8-to-istanbul/test/fixtures/scripts/sourcemap-multisource.js line 3 is 1608 characters long (>512)
+source-is-missing [*/fixtures/*]
+source-contains-prebuilt-javascript-object [*/fixtures/*]
+very-long-line-length-in-source-file * [*.md:*]
+very-long-line-length-in-source-file * [debian/gbp.conf:*]
+very-long-line-length-in-source-file * [*/fixtures/*:*]

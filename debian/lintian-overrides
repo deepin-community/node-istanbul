@@ -1,2 +1,2 @@
 # False positive
-missing-dep-for-interpreter node => nodejs (usr/share/nodejs/istanbul/lib/cli.js) node
+embedded-javascript-library usr/share/nodejs/release-zalgo/lib/Async.js please use libjs-async

@@ -1,6 +1,7 @@
 /* global describe, it */
 
 const CovSource = require('../lib/source')
+const { TraceMap } = require('@jridgewell/trace-mapping')
 
 require('tap').mochaGlobals()
 require('should')
@@ -37,6 +38,35 @@ describe('Source', () => {
       const sourceRaw = ''
       const source = new CovSource(sourceRaw, 0)
       source.offsetToOriginalRelative(undefined, Infinity, Infinity).should.deepEqual({})
+    })
+
+    it('accepts null', () => {
+      const sourceRaw = null
+      new CovSource(sourceRaw, 0).should.ok()
+    })
+
+    it('range crossing two sourcemaps', () => {
+      const sourceRaw = `\
+(() => {
+  // hello.ts
+  function hello() {
+    console.log("hello world");
+  }
+
+  // greet.ts
+  hello();
+})();
+//# sourceMappingURL=greet.js.map\
+`
+      const source = new CovSource(sourceRaw, 0)
+      const sourceMap = new TraceMap({
+        version: 3,
+        sources: ['../hello.ts', '../greet.ts'],
+        sourcesContent: ['export function hello() {\r\n  console.log("hello world")\r\n}', 'import {hello} from "./hello"\r\n\r\nhello()\r\n'],
+        mappings: ';;AAAO,mBAAiB;AACtB,YAAQ,IAAI;AAAA;;;ACCd;',
+        names: []
+      })
+      source.offsetToOriginalRelative(sourceMap, 25, 97).should.deepEqual({})
     })
   })
 
