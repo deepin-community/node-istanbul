@@ -1,0 +1,16 @@
+Description: make manpage reproducible
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-01-31
+
+--- a/nyc/lib/commands/helpers.js
++++ b/nyc/lib/commands/helpers.js
+@@ -31,7 +31,7 @@
+           return
+         }
+ 
+-        option.default = cwd
++        option.default = '.'
+         option.global = true
+       }
+ 

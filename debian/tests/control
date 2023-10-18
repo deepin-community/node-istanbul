@@ -1,0 +1,4 @@
+Test-Command: nyc --help
+Depends: @
+Restrictions: superficial
+Features: test-name=nyc-help

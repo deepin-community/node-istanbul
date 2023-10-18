@@ -1,0 +1,94 @@
+Description: fix for foreground-child >= 3
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2023-08-18
+
+--- a/nyc/bin/nyc.js
++++ b/nyc/bin/nyc.js
+@@ -3,7 +3,7 @@
+ 
+ const configUtil = require('../lib/config-util')
+ const { cliWrapper, suppressEPIPE } = require('../lib/commands/helpers')
+-const foreground = require('foreground-child')
++const { foregroundChild } = require('foreground-child')
+ const resolveFrom = require('resolve-from')
+ const NYC = require('../index.js')
+ 
+@@ -86,7 +86,7 @@
+   // set process.exitCode. Keep track so that both children are run, but
+   // a non-zero exit codes in either one leads to an overall non-zero exit code.
+   process.exitCode = 0
+-  foreground(childArgs, async () => {
++  foregroundChild(childArgs, async () => {
+     const mainChildExitCode = process.exitCode
+ 
+     try {
+--- a/nyc/test/fixtures/cli/fakebin/npm-template.js
++++ b/nyc/test/fixtures/cli/fakebin/npm-template.js
+@@ -1,9 +1,9 @@
+ // shebang gets added before this line
+ var which = require('which')
+ var assert = require('assert')
+-var foreground = require('foreground-child')
++var { foregroundChild } = require('foreground-child')
+ 
+ // strip first PATH folder
+ process.env.PATH = process.env.PATH.replace(/^.+?[:;]/, '')
+ 
+-foreground('npm', process.argv.slice(2))
++foregroundChild('npm', process.argv.slice(2))
+--- a/spawn-wrap/test/double-wrap.js
++++ b/spawn-wrap/test/double-wrap.js
+@@ -6,7 +6,7 @@
+ })
+ 
+ var node = process.execPath
+-var fg = require('foreground-child')
++var { foregroundChild } = require('foreground-child')
+ 
+ /*
+ main adds sw([first]), spawns 'parent'
+@@ -21,7 +21,7 @@
+     console.error('main', process.pid, process.execArgv.concat(argv))
+     console.log('main')
+     sw([__filename, 'first'])
+-    fg(node, [__filename, 'parent'])
++    foregroundChild(node, [__filename, 'parent'])
+     break
+   case 'first':
+     console.error('first', process.pid, process.execArgv.concat(argv))
+@@ -32,7 +32,7 @@
+     console.error('parent', process.pid, process.execArgv.concat(argv))
+     console.log('parent')
+     sw([__filename, 'second'])
+-    fg(node, [__filename, 'child'])
++    foregroundChild(node, [__filename, 'child'])
+     break
+   case 'second':
+     console.error('second', process.pid, process.execArgv.concat(argv))
+--- a/spawn-wrap/test/wrap-twice.js
++++ b/spawn-wrap/test/wrap-twice.js
+@@ -6,7 +6,7 @@
+ })
+ 
+ var node = process.execPath
+-var fg = require('foreground-child')
++var { foregroundChild } = require('foreground-child')
+ 
+ // apply 2 spawn-wraps, make sure they don't clobber one another
+ switch (process.argv[2]) {
+@@ -24,12 +24,12 @@
+     console.log('main')
+     sw([__filename, 'outer'])
+     sw([__filename, 'inner'])
+-    fg(node, [__filename, 'parent'])
++    foregroundChild(node, [__filename, 'parent'])
+     break
+ 
+   case 'parent':
+     console.log('parent')
+-    fg(node, [__filename, 'child'])
++    foregroundChild(node, [__filename, 'child'])
+     break
+ 
+   case 'child':

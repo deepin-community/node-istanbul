@@ -8,8 +8,6 @@ Tighen depends on nodejs > 12 thus do not need fromentries
  process-on-spawn/package.json | 3 ---
  2 files changed, 1 insertion(+), 4 deletions(-)
 
-diff --git a/process-on-spawn/index.js b/process-on-spawn/index.js
-index b3d0991..3a94fd0 100644
 --- a/process-on-spawn/index.js
 +++ b/process-on-spawn/index.js
 @@ -1,7 +1,7 @@
@@ -21,8 +19,6 @@ index b3d0991..3a94fd0 100644
  
  const state = getState(1);
  
-diff --git a/process-on-spawn/package.json b/process-on-spawn/package.json
-index 9b7ac38..607b6a5 100644
 --- a/process-on-spawn/package.json
 +++ b/process-on-spawn/package.json
 @@ -21,9 +21,6 @@

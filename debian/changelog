@@ -1,3 +1,80 @@
+node-istanbul (0.4.5+repack10+~cs98.25.59-2) unstable; urgency=medium
+
+  * Team upload
+  * Add missing minimal version for node-signal-exit
+
+ -- Yadd <yadd@debian.org>  Mon, 21 Aug 2023 09:40:14 +0400
+
+node-istanbul (0.4.5+repack10+~cs98.25.59-1) unstable; urgency=medium
+
+  * Team upload
+  * Declare compliance with policy 4.6.1
+  * New upstream version 0.4.5+repack10+~cs98.25.59, updates:
+    + istanbul-lib-instrument from 5.1.0 to 5.2.0
+    + istanbul-lib-processinfo from 2.0.2 to 2.0.3
+    + istanbul-reports from 3.1.3 to 3.1.4
+    + v8-to-istanbul from 8.1.1 to 9.0.1
+  * Refresh patches
+  * Add dependency to node-jridgewell-trace-mapping
+  * Update lintian override info format in d/source/lintian-overrides
+    on line 16-20
+  * Update standards version to 4.6.2, no changes needed.
+  * Add patches for node-signal-exit >= 4 and node-foreground-child >= 3
+
+ -- Yadd <yadd@debian.org>  Fri, 18 Aug 2023 06:55:38 +0400
+
+node-istanbul (0.4.5+repack10+~cs97.25.57-3) unstable; urgency=medium
+
+  * Team upload
+  * Make build reproducible (fix manpage)
+
+ -- Yadd <yadd@debian.org>  Mon, 31 Jan 2022 14:21:02 +0100
+
+node-istanbul (0.4.5+repack10+~cs97.25.57-2) unstable; urgency=medium
+
+  * Team upload
+  * Fix components build (Closes: #1004656)
+  * Fix autopkgtest
+
+ -- Yadd <yadd@debian.org>  Mon, 31 Jan 2022 11:45:51 +0100
+
+node-istanbul (0.4.5+repack10+~cs97.25.57-1) unstable; urgency=medium
+
+  * Team upload
+  * Embed nyc caching-transform package-hash release-zalgo spawn-wrap
+  * Update lintian overrides
+  * Update copyright
+  * Install /usr/bin/nyc
+  * Add minimal test for nyc
+  * Build nyc manpage
+
+ -- Yadd <yadd@debian.org>  Sun, 30 Jan 2022 12:21:22 +0100
+
+node-istanbul (0.4.5+repack10+~cs71.23.57-2) unstable; urgency=medium
+
+  * team upload
+
+  * use and build-depend on terser (not uglifyjs.terser)
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 02 Dec 2021 20:54:09 +0100
+
+node-istanbul (0.4.5+repack10+~cs71.23.57-1) unstable; urgency=medium
+
+  * Team upload
+  * Fix debian/watch and reimport typescript definitions (jest build was
+    broken)
+
+ -- Yadd <yadd@debian.org>  Fri, 26 Nov 2021 12:16:29 +0100
+
+node-istanbul (0.4.5+repack09+~cs74.23.58-2) unstable; urgency=medium
+
+  * Team upload
+  * Fix filenamemangle
+  * Add fix for node-js-yaml ≥ 4
+  * Update lintian overrides
+
+ -- Yadd <yadd@debian.org>  Wed, 24 Nov 2021 15:25:04 +0100
+
 node-istanbul (0.4.5+repack09+~cs74.23.58-1) unstable; urgency=medium
 
   * Add node-hasha

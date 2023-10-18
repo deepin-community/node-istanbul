@@ -7,9 +7,16 @@
 %:
 	dh $@
 
+override_dh_auto_build:
+	dh_auto_build --buildsystem=nodejs
+	patch -p1 <debian/patches/reproducible.patch
+	help2man -N -n 'istanbul command line interface' nyc/bin/nyc.js >nyc.1
+	patch -p1 -R <debian/patches/reproducible.patch
+
 override_dh_fixperms:
 	dh_fixperms
 	chmod +x debian/node-istanbul/usr/share/nodejs/istanbul/lib/cli.js
+	chmod +x debian/node-istanbul/usr/share/nodejs/nyc/bin/nyc.js
 
 override_dh_installchangelogs:
 # fix mix of html and text

@@ -16,11 +16,9 @@ Last-Update: 2020-10-26
  test/run.js                     |   2 +-
  9 files changed, 60 insertions(+), 64 deletions(-)
 
-diff --git a/test/cli/test-cover-command.js b/test/cli/test-cover-command.js
-index c4043b5..ce70dfc 100644
 --- a/test/cli/test-cover-command.js
 +++ b/test/cli/test-cover-command.js
-@@ -23,6 +23,7 @@ module.exports = {
+@@ -23,6 +23,7 @@
          rimraf.sync(OUTPUT_DIR);
          cb();
      },
@@ -28,7 +26,7 @@ index c4043b5..ce70dfc 100644
      "should cover tests as expected": function (test) {
          helper.setOpts({ lazyHook : true });
          run([ 'test/run.js', '-v' ], function (results) {
-@@ -102,38 +103,39 @@ module.exports = {
+@@ -102,38 +103,39 @@
              test.done();
          });
      },
@@ -100,7 +98,7 @@ index c4043b5..ce70dfc 100644
      "should skip reporting when requested": function (test) {
          helper.setOpts({ lazyHook : true });
          run([ 'test/run.js', '--report', 'none', '--print', 'detail' ], function (results) {
-@@ -164,6 +166,7 @@ module.exports = {
+@@ -164,6 +166,7 @@
              test.done();
          });
      },
@@ -108,7 +106,7 @@ index c4043b5..ce70dfc 100644
      "should cover everything under the sun when default excludes are suppressed": function (test) {
          helper.setOpts({ lazyHook : true });
          run([ 'test/run.js', '--no-default-exclude' ], function (results) {
-@@ -178,6 +181,7 @@ module.exports = {
+@@ -178,6 +181,7 @@
              test.done();
          });
      },
@@ -116,7 +114,7 @@ index c4043b5..ce70dfc 100644
      "should barf when no file is provided": function (test) {
          run([], function (results) {
              test.ok(!results.succeeded());
-@@ -192,6 +196,7 @@ module.exports = {
+@@ -192,6 +196,7 @@
              test.done();
          });
      },
@@ -124,7 +122,7 @@ index c4043b5..ce70dfc 100644
      "should work with RequireJS and AMD modules": function (test) {
          helper.setOpts({ lazyHook : true });
          run([ 'test/amd-run.js', '-v', '--hook-run-in-context' ], function (results) {
-@@ -210,34 +215,7 @@ module.exports = {
+@@ -210,34 +215,7 @@
              test.done();
          });
      },
@@ -160,7 +158,7 @@ index c4043b5..ce70dfc 100644
      "should barf when  post-require-hook not available": function (test) {
          run([ 'test/run.js', '-v', '-x', '**/foo.js', '--post-require-hook', 'does-not-exist' ], function (results) {
              test.ok(!results.succeeded());
-@@ -245,6 +223,7 @@ module.exports = {
+@@ -245,6 +223,7 @@
              test.done();
          });
      },
@@ -168,17 +166,15 @@ index c4043b5..ce70dfc 100644
      "should not introduce globals in the middle of running a test": function (test) {
          helper.setOpts({ lazyHook : true });
          run([ 'test/global-leak.js', '-v' ], function (results) {
-@@ -283,4 +262,5 @@ module.exports = {
+@@ -283,4 +262,5 @@
              test.done();
          });
      }
 +    */
  };
-diff --git a/test/cli/test-html-report.js b/test/cli/test-html-report.js
-index ee57f9d..da4adff 100644
 --- a/test/cli/test-html-report.js
 +++ b/test/cli/test-html-report.js
-@@ -25,6 +25,7 @@ module.exports = {
+@@ -25,6 +25,7 @@
          rimraf.sync(OUTPUT_DIR);
          cb();
      },
@@ -186,7 +182,7 @@ index ee57f9d..da4adff 100644
      "should test files written": function (test) {
          var file = path.resolve(OUTPUT_DIR, 'coverage.json'),
              htmlReport = path.resolve(OUTPUT_DIR),
-@@ -214,6 +215,7 @@ module.exports = {
+@@ -214,6 +215,7 @@
          test.ok(fs.readFileSync(fileFor('lib', 'bar.js.html'), 'utf8') !== '');
          test.done();
      },
@@ -194,18 +190,16 @@ index ee57f9d..da4adff 100644
  
      "test contents": function (test) {
          console.error('Figure out a way to run meaningful tests for HTML report contents');
-@@ -321,4 +323,4 @@ module.exports = {
+@@ -321,4 +323,4 @@
          path.sep = pathSep;
          test.done();
      }
 -};
 \ No newline at end of file
 +};
-diff --git a/test/cli/test-include-pid.js b/test/cli/test-include-pid.js
-index 360cb73..0cbf5ff 100644
 --- a/test/cli/test-include-pid.js
 +++ b/test/cli/test-include-pid.js
-@@ -22,6 +22,7 @@ module.exports = {
+@@ -22,6 +22,7 @@
          rimraf.sync(OUTPUT_DIR);
          cb();
      },
@@ -213,17 +207,15 @@ index 360cb73..0cbf5ff 100644
      "should have no pid by default": function (test) {
          helper.setOpts({ lazyHook : true });
          run([ 'test/run.js', '-v'], function (results) {
-@@ -73,4 +74,5 @@ module.exports = {
+@@ -73,4 +74,5 @@
              });
          });
      }
 +    */
  };
-diff --git a/test/cli/test-lcov-report.js b/test/cli/test-lcov-report.js
-index 96223bf..09bf4f8 100644
 --- a/test/cli/test-lcov-report.js
 +++ b/test/cli/test-lcov-report.js
-@@ -25,6 +25,7 @@ module.exports = {
+@@ -25,6 +25,7 @@
          rimraf.sync(OUTPUT_DIR);
          cb();
      },
@@ -231,18 +223,16 @@ index 96223bf..09bf4f8 100644
      "should produce lcov report consuming coverage file": function (test) {
          var file = path.resolve(OUTPUT_DIR, 'coverage.json'),
              lcovFile = path.resolve(OUTPUT_DIR, 'lcov.info'),
-@@ -54,5 +55,6 @@ module.exports = {
+@@ -54,5 +55,6 @@
          rimraf.sync(lcovReport);
          test.done();
      }
 +    */
  };
  
-diff --git a/test/cli/test-lots-of-files.js b/test/cli/test-lots-of-files.js
-index eff8f26..0fa4fdc 100644
 --- a/test/cli/test-lots-of-files.js
 +++ b/test/cli/test-lots-of-files.js
-@@ -55,6 +55,7 @@ module.exports = {
+@@ -55,6 +55,7 @@
          cb();
      },
  
@@ -250,7 +240,7 @@ index eff8f26..0fa4fdc 100644
      'should report correctly with 1000 code files': function (test) {
          var coverageDir = path.resolve(outputDir, 'coverage'),
              lcovFile = path.resolve(coverageDir, 'lcov.info'),
-@@ -81,6 +82,7 @@ module.exports = {
+@@ -81,6 +82,7 @@
              });
          });
      }
@@ -258,11 +248,9 @@ index eff8f26..0fa4fdc 100644
  };
  
  
-diff --git a/test/cli/test-report-command.js b/test/cli/test-report-command.js
-index dd41986..8850062 100644
 --- a/test/cli/test-report-command.js
 +++ b/test/cli/test-report-command.js
-@@ -26,6 +26,7 @@ module.exports = {
+@@ -26,6 +26,7 @@
          rimraf.sync(OUTPUT_DIR);
          cb();
      },
@@ -270,7 +258,7 @@ index dd41986..8850062 100644
      "should run reports consuming coverage file with lcov default": function (test) {
          test.ok(existsSync(path.resolve(OUTPUT_DIR, 'coverage.json')));
          run([], function (results) {
-@@ -45,6 +46,7 @@ module.exports = {
+@@ -45,6 +46,7 @@
              test.done();
          });
      },
@@ -278,7 +266,7 @@ index dd41986..8850062 100644
      "should barf on invalid format": function (test) {
          test.ok(existsSync(path.resolve(OUTPUT_DIR, 'coverage.json')));
          run([ 'gcov' ], function (results) {
-@@ -73,6 +75,7 @@ module.exports = {
+@@ -73,6 +75,7 @@
              test.done();
          });
      },
@@ -286,7 +274,7 @@ index dd41986..8850062 100644
      "should run all possible reports when requested": function (test) {
          test.ok(existsSync(path.resolve(OUTPUT_DIR, 'coverage.json')));
          run([ '-v' ].concat(Report.getReportList()), function (results) {
-@@ -90,4 +93,5 @@ module.exports = {
+@@ -90,4 +93,5 @@
              test.done();
          });
      }
@@ -294,11 +282,9 @@ index dd41986..8850062 100644
 \ No newline at end of file
 +    */
 +};
-diff --git a/test/cli/test-test-command.js b/test/cli/test-test-command.js
-index 4b08e9b..673f611 100644
 --- a/test/cli/test-test-command.js
 +++ b/test/cli/test-test-command.js
-@@ -30,6 +30,7 @@ module.exports = {
+@@ -30,6 +30,7 @@
              test.done();
          });
      },
@@ -306,7 +292,7 @@ index 4b08e9b..673f611 100644
      "should run coverage when npm coverage is enabled": function (test) {
          helper.setOpts({ lazyHook : true });
          run([ 'test/run.js' ], { npm_config_coverage: '1' }, function (results) {
-@@ -40,4 +41,5 @@ module.exports = {
+@@ -40,4 +41,5 @@
              test.done();
          });
      }
@@ -314,11 +300,9 @@ index 4b08e9b..673f611 100644
 \ No newline at end of file
 +    */
 +};
-diff --git a/test/other/test-matcher.js b/test/other/test-matcher.js
-index 7b9e1fe..1a89869 100644
 --- a/test/other/test-matcher.js
 +++ b/test/other/test-matcher.js
-@@ -47,6 +47,7 @@ module.exports = {
+@@ -47,6 +47,7 @@
              test.done();
          });
      },
@@ -326,7 +310,7 @@ index 7b9e1fe..1a89869 100644
      "should match stuff under cwd": function (test) {
          fileMatcher.matcherFor(function (err, matchFn) {
              test.ok(!err);
-@@ -61,6 +62,7 @@ module.exports = {
+@@ -61,6 +62,7 @@
              test.done();
          });
      },
@@ -334,11 +318,9 @@ index 7b9e1fe..1a89869 100644
      "should ignore node_modules": function (test) {
          fileMatcher.matcherFor({ root: root }, function (err, matchFn) {
              test.ok(!err);
-diff --git a/test/run.js b/test/run.js
-index cbf977b..4e25e72 100755
 --- a/test/run.js
 +++ b/test/run.js
-@@ -48,7 +48,7 @@ function runTests(pat, forceCover) {
+@@ -48,7 +48,7 @@
          var coverageDir = common.getCoverageDir();
          //if any test failed then we cannot obviously run self-coverage
          if (err) { throw err; }

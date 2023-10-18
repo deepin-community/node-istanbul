@@ -2,4 +2,6 @@
 0002-fix-webpack-paths.patch
 0003-Remove-cross-spawn-depends.patch
 0004-Remove-fromentries-dependency.patch
-uuid8.patch
+fix-for-js-yaml-4.patch
+fix-for-signal-exit-4.patch
+fix-for-foreground-child-3.patch

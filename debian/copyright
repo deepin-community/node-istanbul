@@ -31,18 +31,28 @@ Files: *
 Copyright: 2012-2018 Yahoo! Inc.
 License: BSD-3-Clause
 
+Files: append-transform/*
+ caching-transform/*
+ default-require-extensions/*
+Copyright: James Talmage james@talmage.io
+ Node.js contributors
+License: Expat
+
 Files: babel-plugin-istanbul/*
 Copyright: 2016 Istanbul Code Coverage
 License: BSD-3-Clause-babel-plugin-istanbul
 
 Files: debian/*
 Copyright: Bastien Roucariès <rouca@debian.org>
- 2020 Yadd <yadd@debian.org>
+ 2020-2022 Yadd <yadd@debian.org>
 License: BSD-3-Clause
 
 Files: get-package-type/*
  istanbuljs-schema/*
-Copyright: 2020 CFWare, LLC
+ node-preload/*
+ process-on-spawn/*
+Copyright: 2019-2020 CFWare, LLC
+ 2019, Correy Farrell
 License: Expat
 
 Files: html-escaper/*
@@ -50,44 +60,28 @@ Copyright: 2017-present by Andrea Giammarchi <https://github.com/WebReflection>
 License: Expat
 
 Files: hasha/*
-Copyright: Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)
+Copyright: Sindre Sorhus <sindresorhus@gmail.com>
 License: Expat
 
 Files: istanbuljs-load-nyc-config/*
+ nyc/*
  test-exclude/*
-Copyright: 2016-2019 Contributors
+ v8-to-istanbul/*
+Copyright: 2015-2019 Contributors
 License: ISC
-
-Files: types-istanbul*/*
-Copyright: Microsoft Corporation
-License: Expat
-
-Files: types-istanbul-lib-report/*
-Copyright: 2012-2021 Microsoft Corporation
-  2012-2021 Jason Cheatham
-  2012-2021 Zacharias Björngren"
-License: Expat
 
 Files: istanbul-lib-processinfo/*
-Copyright: 2021  Isaac Z. Schlueter and Contributors
+ spawn-wrap/*
+Copyright: Isaac Z. Schlueter and Contributors
 License: ISC
 
-Files: istanbul-lib-hook/*
-Copyright: 2012-2015, Yahoo Inc.
-License: BSD-3-Clause
+Files: package-hash/*
+ release-zalgo/*
+Copyright: 2016-2017 Mark Wubben <mark@novemberborn.net>
+License: ISC
 
-Files: append-transform/*
-Copyright: 2021 James Talmage james@talmage.io
-License: Expat
-
-Files: node-preload/*
-Copyright: 2019, CFWare, LLC
-           2019, Correy Farrell
-License: Expat
-
-Files: process-on-spawn/*
-Copyright: 2019, CFWare, LLC
-           2019, Correy Farrell
+Files: types-*/*
+Copyright: Microsoft Corporation
 License: Expat
 
 License: BSD-3-Clause
